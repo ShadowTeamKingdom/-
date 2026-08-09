@@ -1,0 +1,335 @@
+local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/master/source.lua", true))()
+local Window = Luna:CreateWindow({
+	Name = "STK", -- This Is Title Of Your Window
+	Subtitle = "Dasmaco", -- Damasco Subtitle next To the main title.
+	LogoID = "82795327169782", -- The Asset ID of your logo. Set to nil if you do not have a logo for Luna to use.
+	LoadingEnabled = true, -- Whether to enable the loading animation. Set to false if you do not want the loading screen or have your own custom one.
+	LoadingTitle = "Bem Vindo a STK", -- Header for loading screen
+	LoadingSubtitle = "STK Softworks", -- Subtitle for loading screen
+
+	ConfigSettings = {
+		RootFolder = nil, -- The Root Folder Is Only If You Have A Hub With Multiple Game Scripts and u may remove it. DO NOT ADD A SLASH
+		ConfigFolder = "Big Hub" -- The Name Of The Folder Where Luna Will Store Configs For This Script. DO NOT ADD A SLASH
+	},
+
+	KeySystem = true, -- As Of Beta 6, Luna Has officially Implemented A Key System!
+	KeySettings = {
+		Title = "STK",
+		Subtitle = "Key System",
+		Note = "Para adquirr Sua Chave fale com o Proprietário https://discord.gg/8KC7g6Bje",
+		SaveInRoot = false, -- Enabling will save the key in your RootFolder (YOU MUST HAVE ONE BEFORE ENABLING THIS OPTION)
+		SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+		Key = {"STKMEMBRO"},
+		SecondAction = {
+			Enabled = true,
+			Type = "Link", -- You can also put discord as an option, if your are doing that, don’t include discord.gg as Luna will auto add it as a prefix, just replace it with your identifier, example, if your are doing discord.gg/mspaint, just use mspaint.			
+			Parameter = ""
+		}
+	}
+})
+
+Window:CreateHomeTab({
+	SupportedExecutors = {
+		"Synapse X",
+		"Krnl",
+		"ProtoSmasher",
+		"Fluxus",
+		"Script-Ware",
+		"EasyExploits",
+		"Electron",
+		"JJSploit",
+		"Calamari",
+		"SirHurt",
+		"Sentinel",
+		"WEAREDEVS",
+		"Comet",
+		"Cellery",
+		"Wave",
+		"CODex",
+		"Delta"
+	},
+
+	DiscordInvite = "8KC7g6Bje", -- same thing here
+	Icon = 1
+})
+
+
+local Tab = Window:CreateTab({
+	Name = "+1 speed fuga do reino",
+	Icon = "view_in_ar",
+	ImageSource = "Material",
+	ShowTitle = true
+})
+
+Luna:Notification({
+	Title = "Luna Notification Example",
+	Icon = "notifications_active",
+	ImageSource = "Material",
+	Content = "This Is A Preview Of Luna's Dynamic Notification System Entailing Estimated/Calculated Wait Times, A Sleek Design, Icons, And A Glassmorphic Look"
+})
+
+Tab:CreateSection("Etapa 2/3")
+Tab:CreateDivider()
+
+
+local Button = Tab:CreateButton({
+	Name = "Teleport Segunda Esteira",
+	Description = nil,
+	Callback = function()
+                local player = game.Players.LocalPlayer
+                local root = player.Character:WaitForChild("HumanoidRootPart")
+                root.CFrame = CFrame.new(-895.940000, 6.700000, -0.170000)
+		print("")
+	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Trofeus Etapa2 de 3",
+	Description = nil,
+	Callback = function()
+                local player = game.Players.LocalPlayer
+                local root = player.Character:WaitForChild("HumanoidRootPart")
+                root.CFrame = CFrame.new(-3011.040000, 5.000000, -8.620000)
+		print("")
+	end
+})
+
+local AutoState = false
+local Toggle = Tab:CreateToggle({
+	Name = "Auto Rebirth",
+	Description = nil,
+	CurrentValue = false,
+	Callback = function(Value)
+		AutoState = Value
+		
+		if AutoState then
+			task.spawn(function()
+				while AutoState do
+				
+				local Event = game:GetService("ReplicatedStorage").RebirthRequest
+                Event:InvokeServer("Rebirth")
+					task.wait(5)
+				end
+			end)
+		end
+	end
+}, "AutoGetState")
+
+Tab:CreateSection("Etapa 3/4")
+Tab:CreateDivider()
+
+local Button = Tab:CreateButton({
+	Name = "Etapa 3 e Portal para Etapa 4",
+	Description = nil,
+	Callback = function()
+
+                local player = game.Players.LocalPlayer
+                local root = player.Character:WaitForChild("HumanoidRootPart")
+                root.CFrame = CFrame.new(-6467.950000, 4.880000, -12.480000)
+		print("")
+	end
+})
+
+local AutoHatch = false
+Tab:CreateSection("Etapa 4")
+
+Tab:CreateDivider()
+local Button = Tab:CreateButton({
+	Name = "Teleport Esteira Ultima RiskBan",
+	Description = nil,
+
+	Callback = function()
+local player = game.Players.LocalPlayer
+                local root = player.Character:WaitForChild("HumanoidRootPart")
+                root.CFrame = CFrame.new(-2527.430000, 60.870000, 3326.740000)
+		print("")
+	end
+})
+
+local AutoHatch = false
+local Button = Tab:CreateButton({
+	Name = "Teleport Trofeus ultima ilha",
+	Description = nil,
+
+	Callback = function()
+                local player = game.Players.LocalPlayer
+                local root = player.Character:WaitForChild("HumanoidRootPart")
+                root.CFrame = CFrame.new(-7673.520000, 56.160000, 3261.260000)
+		print("")
+	end
+})
+
+
+local Toggle = Tab:CreateToggle({
+	Name = "Auto abrir ovos tem que chegar perto mundo 4",
+	Description = nil,
+	CurrentValue = false,
+	Callback = function(Value)
+		AutoHatch = Value
+
+		if AutoHatch then
+			task.spawn(function()
+				while AutoHatch do
+					local Event = game:GetService("ReplicatedStorage").PetEggRequest
+					Event:InvokeServer(
+						"Hatch",
+						"ovo4"
+					)
+					task.wait(0.1)
+				end
+			end)
+		end
+	end
+}, "AutoHatch")
+
+local AutoTP = false
+
+local Toggle = Tab:CreateToggle({
+	Name = "Auto Teleport Instant Wins",
+	Description = nil,
+	CurrentValue = false,
+	Callback = function(Value)
+		AutoTP = Value
+
+		if AutoTP then
+			task.spawn(function()
+				while AutoTP do
+					local player = game.Players.LocalPlayer
+					local character = player.Character or player.CharacterAdded:Wait()
+					local root = character:WaitForChild("HumanoidRootPart")
+
+					root.CFrame = CFrame.new(-7677.010000, 91.390000, 3251.300000)
+					task.wait(5)
+				end
+			end)
+		end
+	end
+}, "AutoTeleport")
+
+Tab:CreateSection("AutoWins recomendo esta na ultima ilha")
+Tab:CreateDivider()
+
+local AutoFarm1 = false
+
+local Toggle = Tab:CreateToggle({
+	Name = "AutoWins1",
+	Description = nil,
+	CurrentValue = false,
+	Callback = function(Value)
+		AutoTP = Value
+
+		if AutoTP then
+			task.spawn(function()
+				while AutoTP do
+					local player = game.Players.LocalPlayer
+					local character = player.Character or player.CharacterAdded:Wait()
+					local root = character:WaitForChild("HumanoidRootPart")
+
+					root.CFrame = CFrame.new(-7673.280000, 58.360000, 3247.900000)
+
+					task.wait(0.03)
+				end
+			end)
+		end
+	end
+}, "AutoFarm1")
+
+local AutoFarm2 = false
+
+local Toggle = Tab:CreateToggle({
+	Name = "AutoWins2",
+	Description = nil,
+	CurrentValue = false,
+	Callback = function(Value)
+		AutoTP = Value
+
+		if AutoTP then
+			task.spawn(function()
+				while AutoTP do
+					local player = game.Players.LocalPlayer
+					local character = player.Character or player.CharacterAdded:Wait()
+					local root = character:WaitForChild("HumanoidRootPart")
+
+					root.CFrame = CFrame.new(-7672.670000, 56.040000, 3265.690000)
+
+					task.wait(0.04)
+				end
+			end)
+		end
+	end
+}, "AutoFarm2")
+
+local ThemeTab = Window:CreateTab({
+	Name = "Theme Tab",
+	Icon = "palette",
+	ImageSource = "Material",
+	ShowTitle = true
+})
+
+Tab:CreateSection("")
+Tab:CreateDivider()
+
+local Dropdown = Tab:CreateDropdown({
+	Name = "Dropdown Example",
+	Description = nil,
+	Options = {
+		"Option 1", "Option 2", "Option 3", "Option 4", "Option 5",
+		"Option 6", "Option 7", "Option 8", "Option 9", "Option 10",
+		"Option 11", "Option 12", "Option 13", "Option 14", "Option 15",
+		"Option 16", "Option 17", "Option 18", "Option 19", "Option 20",
+		"Option 21", "Option 22", "Option 23", "Option 24", "Option 25"
+	},
+
+	CurrentOption = {"Option 1"},
+	MultipleOptions = false,
+	SpecialType = nil,
+	Callback = function(Options)
+		print("Dropdown selected:", Options)
+	end
+}, "Dropdown")
+
+local Bind = Tab:CreateBind({
+	Name = "Bind Example",
+	Description = nil,
+	CurrentBind = "Q",
+	HoldToInteract = false,
+	Callback = function(BindState)
+		print("Keybind activated. State:", BindState)
+	end,
+	
+	OnChangedCallback = function(Bind)
+		print("Keybind changed to:", Bind.Name)
+	end,
+}, "Bind")
+
+local Label1 = Tab:CreateLabel({
+	Text = "This is a Default Label",
+	Style = 1
+})
+
+local Label2 = Tab:CreateLabel({
+	Text = "This is an Information Label",
+	Style = 2
+})
+
+local Label3 = Tab:CreateLabel({
+	Text = "This is a Warning Label",
+	Style = 3
+})
+
+local Paragraph = Tab:CreateParagraph({
+	Title = "Paragraph Example ",
+	Text = "This Is A Paragraph. You Can Type Very Long Strings Here And They'll Automatically Fit! This Counts As A Description Right? Right? Right? Right? Right? Right? Right? Right? Right? Right? Right? Right? Right? Right? Right? Also Did I Mention This Has Rich Text? Also Did I Mention This Has Rich Text? Also Did I Mention This Has Rich Text? Also Did I Mention This Has Rich Text? Also Did I Mention This Has Rich Text? Also Did I Mention This Has Rich Text?"
+})
+
+
+ThemeTab:BuildThemeSection()
+
+local ConfigTab = Window:CreateTab({
+	Name = "Config Tab",
+	Icon = "settings",
+	ImageSource = "Material",
+	ShowTitle = true
+})
+
+ConfigTab:BuildConfigSection()
