@@ -1,5 +1,5 @@
 local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/master/source.lua", true))()
-local Window = Luna:CreateWindow({
+local Window = Luna:CreateWindow({ 
 	Name = "STK", -- This Is Title Of Your Window
 	Subtitle = "Dasmaco", -- Damasco Subtitle next To the main title.
 	LogoID = "82795327169782", -- The Asset ID of your logo. Set to nil if you do not have a logo for Luna to use.
