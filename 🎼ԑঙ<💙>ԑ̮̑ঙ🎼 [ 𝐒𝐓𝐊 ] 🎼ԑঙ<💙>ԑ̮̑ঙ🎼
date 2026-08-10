@@ -115,8 +115,36 @@ local Toggle = Tab:CreateToggle({
 	end
 }, "AutoGetState")
 
+Tab:CreateSection("Etapa")
+Tab:CreateDivider()
+
 Tab:CreateSection("Etapa 3/4")
 Tab:CreateDivider()
+
+local AutoTP = false
+
+local Toggle = Tab:CreateToggle({
+	Name = "Wins caverna",
+	Description = nil,
+	CurrentValue = false,
+	Callback = function(Value)
+		AutoTP = Value
+
+		if AutoTP then
+			task.spawn(function()
+				while AutoTP do
+					local player = game.Players.LocalPlayer
+					local character = player.Character or player.CharacterAdded:Wait()
+					local root = character:WaitForChild("HumanoidRootPart")
+
+					root.CFrame = CFrame.new(-5610.510000, 9.330000, -30.400000)
+
+					task.wait(40)
+				end
+			end)
+		end
+	end
+}, "AutoTeleport")
 
 local Button = Tab:CreateButton({
 	Name = "Etapa 3 e Portal para Etapa 4",
