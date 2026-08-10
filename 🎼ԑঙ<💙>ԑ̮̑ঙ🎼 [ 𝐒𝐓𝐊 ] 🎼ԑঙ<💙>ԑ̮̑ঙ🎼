@@ -139,7 +139,7 @@ local Toggle = Tab:CreateToggle({
 
 					root.CFrame = CFrame.new(-3122.790000, 6.660000, -2.780000)
 
-					task.wait(2)
+					task.wait(5)
 				end
 			end)
 		end
