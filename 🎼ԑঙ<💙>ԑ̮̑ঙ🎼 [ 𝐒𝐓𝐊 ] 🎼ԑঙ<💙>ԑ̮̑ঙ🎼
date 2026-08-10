@@ -124,6 +124,31 @@ Tab:CreateDivider()
 local AutoTP = false
 
 local Toggle = Tab:CreateToggle({
+	Name = "Auto Esteira Etapa 3",
+	Description = nil,
+	CurrentValue = false,
+	Callback = function(Value)
+		AutoTP = Value
+
+		if AutoTP then
+			task.spawn(function()
+				while AutoTP do
+					local player = game.Players.LocalPlayer
+					local character = player.Character or player.CharacterAdded:Wait()
+					local root = character:WaitForChild("HumanoidRootPart")
+
+					root.CFrame = CFrame.new(-3122.790000, 6.660000, -2.780000)
+
+					task.wait(0.03)
+				end
+			end)
+		end
+	end
+}, "AutoTeleport")
+
+local AutoTP = false
+
+local Toggle = Tab:CreateToggle({
 	Name = "Wins caverna",
 	Description = nil,
 	CurrentValue = false,
